@@ -1,9 +1,10 @@
-$color-primary : #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-$color-grey: #777;
+$color-primary: green;
+$color-primary-light: lightgreen;
+$color-primary-dark: darkgreen;
 $color-black: #000;
 $color-white: #fff;
+$color-gray: #777;
+
 
 
 *,
@@ -30,35 +31,60 @@ body {
 
 }
 .header{
-    background-image:   linear-gradient(to right bottom,
-                        rgba($color-primary, 0.8), 
-                        rgba($color-primary-dark, 0.8)), 
+    background-image:   linear-gradient(to right bottom
+                        ,rgba($color-primary-light, 0.8), 
+                        rgba($color-primary, 0.8)) , 
                         url("../img/hero.jpg");
     height: 95vh;
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 0 100%, 100% 80vh, 100% 0);
     position: relative;
-    &__logo-box{
+
+    &-primary{
         position: absolute;
-        top: 4rem;
-        left:4rem;
-    }
-    &__logo{
-        height: 3.5rem;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-white;
+        backface-visibility: hidden;
+        text-align: center;
+
+        &--main{
+            display: block;
+            padding: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2.7rem;
+            font-size: 4rem;
+            font-weight: 400;
+            animation-name: moveInLeft;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+        }
+        &--sub{
+            display: block;
+            padding: 2rem;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            letter-spacing: 1rem;
+            font-size: 2rem;
+            animation-name: moveInRight;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            margin-bottom: 3rem;
+            width: 60rem;
+        }
     }
 }
 
-.header-primary{
+.header__logo-box{
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: $color-white;
-    backface-visibility: hidden;
-    text-align: center;
+    top: 4rem;
+    left:4rem;
 }
-
+.header__logo{
+    height: 3.5rem;
+}
 .span-title--main{
     display: block;
     padding: 4rem;
@@ -137,14 +163,14 @@ body {
 }
 .btn:hover{
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px hsla(0,0,0, 0.2);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
 }
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px hsla(0,0,0, 0.2);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
 }
 .btn--white{
-    color: $color-grey;
+    color: $color-gray;
     background-color: $color-white;
 }
 .btn::after{
